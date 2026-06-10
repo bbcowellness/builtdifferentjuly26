@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Built Different — Bible Babe Wellness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --plum: #723165;
+    --plum-deep: #4e1f46;
+    --plum-light: #9b4d8a;
+    --pink: #e3b5d7;
+    --pink-pale: #f0d5e9;
+    --tan: #d1b28f;
+    --cream: #f6f3e4;
+    --near-black: #1c1c1c;
+    --gold: #f5e0b7;
+    --gold-dark: #c9a96e;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--near-black);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--plum-deep);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 40%, rgba(114,49,101,0.6) 0%, transparent 65%),
+                radial-gradient(ellipse at 20% 80%, rgba(227,181,215,0.12) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    opacity: 0.9;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(56px, 12vw, 110px);
+    font-weight: 700;
+    line-height: 0.92;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--pink);
+    display: block;
+  }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 3.5vw, 26px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--pink-pale);
+    margin: 24px 0 40px;
+    max-width: 560px;
+    line-height: 1.5;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--plum-deep);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 18px 44px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .hero-cta:hover { background: var(--cream); transform: translateY(-2px); }
+
+  .hero-seats {
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--pink);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── SCROLL DIVIDER ── */
+  .divider {
+    height: 3px;
+    background: linear-gradient(90deg, var(--plum), var(--pink), var(--gold), var(--pink), var(--plum));
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 80px 24px; }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .container-wide {
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  /* ── RECOGNITION ── */
+  .recognition {
+    background: var(--cream);
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--plum);
+    margin-bottom: 20px;
+  }
+
+  .recognition h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 6vw, 52px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--plum-deep);
+    margin-bottom: 32px;
+  }
+
+  .recognition h2 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--plum-light);
+  }
+
+  .pain-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .pain-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #3a3a3a;
+  }
+
+  .pain-list li::before {
+    content: '—';
+    color: var(--plum);
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .recognition-close {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(20px, 4vw, 28px);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--plum-deep);
+    border-left: 3px solid var(--pink);
+    padding-left: 20px;
+    line-height: 1.5;
+  }
+
+  /* ── WHO THIS IS FOR / NOT FOR ── */
+  .qualifier {
+    background: var(--plum-deep);
+    color: var(--cream);
+  }
+
+  .qualifier h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 5.5vw, 48px);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 48px;
+    color: var(--cream);
+  }
+
+  .qualifier h2 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--pink);
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  @media (max-width: 600px) {
+    .two-col { grid-template-columns: 1fr; }
+  }
+
+  .col-head {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .col-yes .col-head { color: var(--gold); }
+  .col-no .col-head { color: var(--pink); opacity: 0.7; }
+
+  .check-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .check-list li {
+    font-size: 15px;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    opacity: 0.9;
+  }
+
+  .col-yes .check-list li::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .col-no .check-list li::before {
+    content: '✕';
+    color: var(--pink);
+    opacity: 0.6;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ── COACH G STORY ── */
+  .story {
+    background: var(--gold);
+  }
+
+  .story h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--plum-deep);
+    margin-bottom: 28px;
+  }
+
+  .story p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #2e2e2e;
+    margin-bottom: 20px;
+    max-width: 680px;
+  }
+
+  .story p strong {
+    color: var(--plum-deep);
+    font-weight: 600;
+  }
+
+  .story-verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--plum);
+    border-left: 3px solid var(--plum);
+    padding-left: 20px;
+    margin-top: 32px;
+    line-height: 1.6;
+  }
+
+  /* ── METHODOLOGIES ── */
+  .methods {
+    background: var(--cream);
+  }
+
+  .methods h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--plum-deep);
+    margin-bottom: 12px;
+  }
+
+  .methods-intro {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 52px;
+    max-width: 600px;
+    line-height: 1.65;
+  }
+
+  .method-card {
+    border-left: 4px solid var(--plum);
+    padding: 32px 0 32px 32px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .method-card:last-child { margin-bottom: 0; }
+
+  .method-number {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--plum-light);
+    margin-bottom: 10px;
+  }
+
+  .method-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 700;
+    color: var(--plum-deep);
+    margin-bottom: 14px;
+  }
+
+  .method-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #444;
+    max-width: 640px;
+  }
+
+  .method-card .method-result {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--plum);
+    background: var(--pink-pale);
+    padding: 6px 14px;
+  }
+
+  /* ── WHAT'S INSIDE ── */
+  .inside {
+    background: var(--plum);
+    color: var(--cream);
+  }
+
+  .inside h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    color: var(--cream);
+  }
+
+  .inside-intro {
+    font-size: 15px;
+    opacity: 0.8;
+    margin-bottom: 48px;
+    max-width: 560px;
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .pillar {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(227,181,215,0.25);
+    padding: 28px 24px;
+  }
+
+  .pillar-icon {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .pillar h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .pillar p {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.8;
+  }
+
+  /* ── INVESTMENT ── */
+  .investment {
+    background: var(--cream);
+    text-align: center;
+  }
+
+  .investment h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 600;
+    color: var(--plum-deep);
+    margin-bottom: 12px;
+  }
+
+  .investment-sub {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 48px;
+    font-style: italic;
+  }
+
+  .price-card {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--plum-deep);
+    color: var(--cream);
+    padding: 52px 40px;
+    position: relative;
+  }
+
+  .price-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--plum-deep);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    white-space: nowrap;
+  }
+
+  .price-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--pink);
+  }
+
+  .price-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--cream);
+    margin: 16px 0 8px;
+  }
+
+  .price-amount sup {
+    font-size: 28px;
+    vertical-align: super;
+  }
+
+  .price-note {
+    font-size: 13px;
+    opacity: 0.65;
+    margin-bottom: 32px;
+    font-style: italic;
+  }
+
+  .price-includes {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .price-includes li {
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+    opacity: 0.9;
+  }
+
+  .price-includes li::before {
+    content: '✦';
+    color: var(--gold);
+    flex-shrink: 0;
+    font-size: 11px;
+    margin-top: 3px;
+  }
+
+  .price-cta {
+    display: block;
+    width: 100%;
+    background: var(--gold);
+    color: var(--plum-deep);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 18px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .price-cta:hover { background: var(--cream); transform: translateY(-2px); }
+
+  .seats-warning {
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--plum-light);
+    font-style: italic;
+  }
+
+  /* ── FAQ ── */
+  .faq {
+    background: var(--gold);
+  }
+
+  .faq h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 600;
+    color: var(--plum-deep);
+    margin-bottom: 40px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(114,49,101,0.15);
+    padding: 24px 0;
+  }
+
+  .faq-item:first-of-type { border-top: 1px solid rgba(114,49,101,0.15); }
+
+  .faq-q {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--plum-deep);
+    margin-bottom: 10px;
+  }
+
+  .faq-a {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.7;
+    max-width: 680px;
+  }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    background: var(--plum-deep);
+    text-align: center;
+    padding: 100px 24px;
+  }
+
+  .final-cta h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(34px, 7vw, 64px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 20px;
+  }
+
+  .final-cta h2 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--pink);
+    display: block;
+  }
+
+  .final-cta p {
+    font-size: 16px;
+    color: var(--pink-pale);
+    opacity: 0.85;
+    margin-bottom: 40px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.65;
+  }
+
+  .final-cta a {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--plum-deep);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 20px 52px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .final-cta a:hover { background: var(--cream); transform: translateY(-2px); }
+
+  .final-verse {
+    margin-top: 52px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--pink);
+    opacity: 0.8;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--near-black);
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 12px;
+    color: #888;
+    letter-spacing: 0.06em;
+  }
+
+  footer span { color: var(--plum-light); }
+
+  @media (max-width: 480px) {
+    .method-card { padding-left: 20px; }
+    .price-card { padding: 44px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <p class="hero-eyebrow">Bible Babe Wellness · Coach G · 12-Week Group Cohort</p>
+  <h1>Built <em>Different</em></h1>
+  <p class="hero-sub">A 12-week faith-rooted transformation for the woman who's done being stuck in her own way.</p>
+  <a href="#apply" class="hero-cta">Secure Your Spot</a>
+  <p class="hero-seats">Only 12 women. One cohort. Starts July 5.</p>
+</section>
+<div class="divider"></div>
+
+<!-- ══ RECOGNITION ══ -->
+<section class="recognition">
+  <div class="container">
+    <p class="section-label">This is for you if…</p>
+    <h2>You already know <em>what to do.</em><br>You're just not doing it — and it's starting to cost you.</h2>
+    <ul class="pain-list">
+      <li>You've downloaded the apps, bought the programs, started fresh on Monday more times than you can count — and nothing sticks.</li>
+      <li>You're not new to faith. You know God has more for you. But your body and your habits tell a different story than who you're trying to become.</li>
+      <li>You're showing up depleted. In your relationships. As a mom. At work. At church. Everywhere — because you can't pour from empty.</li>
+      <li>You want to lose weight, yes. But what you're really after is feeling <em>like yourself again.</em> Feeling chosen, capable, and clear.</li>
+      <li>Part of you wonders if discipline is even possible for you — or if you're just "not that type of person."</li>
+    </ul>
+    <p class="recognition-close">You're not broken. You've just been doing this alone, without a plan built around who God's actually calling you to be. That changes here.</p>
+  </div>
+</section>
+
+<!-- ══ QUALIFIER ══ -->
+<section class="qualifier">
+  <div class="container-wide">
+    <p class="section-label" style="color: var(--gold); opacity:0.8;">Be honest with yourself</p>
+    <h2>Built Different is <em>not</em> for everyone.<br>Here's who it's for — and who it isn't.</h2>
+    <div class="two-col">
+      <div class="col-yes">
+        <p class="col-head">This is for you if</p>
+        <ul class="check-list">
+          <li>You're a Christian woman between 25–45 who's ready to stop playing around with her health.</li>
+          <li>You're willing to be coached. That means receiving feedback, being honest, and doing the work even when it's inconvenient.</li>
+          <li>You understand this is an investment — in your body, your habits, and your calling.</li>
+          <li>You want a plan that makes sense of your faith and your fitness at the same time, not one that separates them.</li>
+          <li>You're tired of starting over and you're ready to finally finish something.</li>
+          <li>You're committed to showing up for 12 weeks — not dabbling, not dipping out, but all in.</li>
+        </ul>
+      </div>
+      <div class="col-no">
+        <p class="col-head">This is NOT for you if</p>
+        <ul class="check-list">
+          <li>You're looking for a quick fix or a 30-day detox with no real lifestyle change.</li>
+          <li>You want someone to do the work for you — I coach, I don't carry you.</li>
+          <li>You're not open to addressing your habits, mindset, and nutrition — not just the gym.</li>
+          <li>You're not ready to be honest about where you've been self-sabotaging.</li>
+          <li>You're still waiting for "the right time." There isn't one.</li>
+          <li>You're not serious about the financial commitment. This is a real investment in real results.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COACH G STORY ══ -->
+<section class="story">
+  <div class="container">
+    <p class="section-label">Why I built this</p>
+    <h2>I know what it costs to stay stuck. I paid that bill for years.</h2>
+    <p>Five years ago, I was depressed, suicidal, and disconnected from the woman God made me to be. I wasn't just struggling physically — I was struggling spiritually, mentally, and in every area of my life. The weight wasn't just on my body. It was on my identity.</p>
+    <p>When I finally stopped trying to fix pieces of myself and started building <strong>alignment</strong> — body, mind, habits, and faith together — everything shifted. I dropped over 20 lbs, rebuilt my relationship with God, and walked into a purpose I almost didn't stay alive to fulfill.</p>
+    <p>Now I've helped hundreds of women do the same. Not just lose weight. Not just "get fit." But <strong>stop falling for temptation, stop shrinking, and start building the body and the life God always intended for them.</strong></p>
+    <p>Built Different is the most intentional thing I've ever created. It's everything that worked — structured into 12 weeks, for 12 women who are ready.</p>
+    <p class="story-verse">"She is clothed with strength and dignity, and she laughs without fear of the future." — Proverbs 31:25</p>
+  </div>
+</section>
+
+<!-- ══ METHODOLOGIES ══ -->
+<section class="methods">
+  <div class="container">
+    <p class="section-label">The framework</p>
+    <h2>Three systems. One transformation.</h2>
+    <p class="methods-intro">This isn't a workout plan or a meal guide sent to your inbox. It's a full ecosystem — built around the exact three areas where women get stuck and stay stuck.</p>
+
+    <div class="method-card">
+      <p class="method-number">Pillar 01 · Habits & Identity</p>
+      <h3>The Bible Babe Blueprint™</h3>
+      <p>This is where we deal with the real enemy: the patterns. Through a biblical lens, we go deep on habit formation — not just building new routines, but dismantling the ones that keep pulling you back. You'll walk away accountable, confident, and completely clear on the mission. No more treating your health like a phase. This is how we make it a lifestyle.</p>
+      <span class="method-result">You become the woman who follows through — every time.</span>
+    </div>
+
+    <div class="method-card">
+      <p class="method-number">Pillar 02 · Training & Body</p>
+      <h3>The Triple B (Bible Babe Body) Program™</h3>
+      <p>A customized, faith-based workout plan — built for your body, your imbalances, and your goals. We're not just chasing aesthetics. We're correcting compensations, improving mobility, and training in a way that honors what God gave you. You'll have full video demonstrations so your form is on point, and a plan you actually understand — so you're never guessing in the gym again.</p>
+      <span class="method-result">You stop winging it and start training with intention.</span>
+    </div>
+
+    <div class="method-card">
+      <p class="method-number">Pillar 03 · Nutrition & Lifestyle</p>
+      <h3>The P.L.A.T.E. Method™</h3>
+      <p>Pinpoint. Lock in. Align. Track. Extend. This is the framework that takes you from calculating macros in a panic to living in a way that naturally supports your goals — without the chaos of constant guessing. No more all-or-nothing. No more "I was doing so good until..." We build a nutrition approach that fits your real life and supports who God's calling you to be.</p>
+      <span class="method-result">You stop dieting and start living aligned.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHAT'S INSIDE ══ -->
+<section class="inside">
+  <div class="container">
+    <p class="section-label" style="color: var(--gold); opacity: 0.85;">What you're actually getting</p>
+    <h2>12 weeks. Four pillars. Zero fluff.</h2>
+    <p class="inside-intro">Built Different covers every area that affects how you show up — not just in the gym, but in your life.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">🏋🏾‍♀️</div>
+        <h4>Fitness</h4>
+        <p>Customized training plan with video demos, progressive programming, and coaching on form and mobility.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🥗</div>
+        <h4>Nutrition</h4>
+        <p>P.L.A.T.E. Method™ implementation — a sustainable nutrition lifestyle, not another diet to abandon by week three.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">✝️</div>
+        <h4>Faith & Identity</h4>
+        <p>Biblical habit formation and spiritual anchoring — so your transformation is rooted in who God says you are, not who you've been.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🧠</div>
+        <h4>Mental Health</h4>
+        <p>Mindset work, accountability, and tools to disrupt the cycles of self-sabotage that have kept you stuck.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INVESTMENT ══ -->
+<section class="investment" id="apply">
+  <div class="container">
+    <p class="section-label">Your investment</p>
+    <h2>This is what it costs to stop starting over.</h2>
+    <p class="investment-sub">12 women. 12 weeks. One spot has your name on it — or it doesn't.</p>
+
+    <div class="price-card">
+      <span class="price-badge">Built Different · July 5 Cohort</span>
+      <h3>12-Week Group Coaching</h3>
+      <div class="price-amount"><sup>$</sup>797</div>
+      <p class="price-note">One-time investment · Payment plans available</p>
+      <ul class="price-includes">
+        <li>Custom training plan + video demonstrations (Triple B Program™)</li>
+        <li>P.L.A.T.E. Method™ nutrition framework built for your life</li>
+        <li>Bible Babe Blueprint™ habit curriculum through a biblical lens</li>
+        <li>Faith-based mental health + mindset work woven throughout</li>
+        <li>12 weeks of group coaching + accountability inside a private community of women</li>
+        <li>Direct access to Coach G — you are not doing this alone</li>
+        <li>Access to the HubFit training platform</li>
+      </ul>
+      <a href="#" class="price-cta">I'm Ready — Secure My Spot</a>
+    </div>
+    <p class="seats-warning">Only 12 spots. When they're gone, they're gone. Next cohort: September.</p>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="faq">
+  <div class="container">
+    <h2>Real questions, real answers.</h2>
+
+    <div class="faq-item">
+      <p class="faq-q">I've tried programs before and nothing worked. Why would this be different?</p>
+      <p class="faq-a">Because most programs give you information without accountability, and a plan without identity work. Built Different addresses why you stop — the habits, the mindset, the spiritual disconnect — not just the what. You're not just getting a plan. You're getting coached through your own resistance.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Do I need to be super fit or experienced in the gym?</p>
+      <p class="faq-a">No. Your plan is built specifically for where your body is right now — including any imbalances, limitations, or joint concerns. We meet you where you are and build from there.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What does "faith-based" actually mean in practice? Is this just Bible verses on workout graphics?</p>
+      <p class="faq-a">Absolutely not. Faith is woven into the framework of how we think about identity, habits, discipline, and the body. We use Scripture as a lens — not as decoration. If your relationship with God is central to who you are, then it's central to how you train and live.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">I'm busy. I'm a mom / I work full time / I have a lot going on. Is this realistic for me?</p>
+      <p class="faq-a">This was built for real women with real lives — not women with three free hours a day and zero responsibilities. The whole point is to create a sustainable structure that works in your actual life. That said: this does require showing up. Busy is a reality. Unprepared is a choice.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Is there a payment plan?</p>
+      <p class="faq-a">Yes. Reach out directly to discuss options. If the investment is the only thing standing between you and your spot, let's talk. If you're unsure whether it's "worth it" — that's a different conversation, and it means this might not be your time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINAL CTA ══ -->
+<section class="final-cta">
+  <h2>You know this is <em>your moment.</em></h2>
+  <p>Twelve women are about to spend 12 weeks building the bodies, the habits, and the lives they were called to have. The only question is whether you're one of them.</p>
+  <a href="#apply">I'm Ready. Lock Me In.</a>
+  <p class="final-verse">"For we are God's handiwork, created in Christ Jesus to do good works,<br>which God prepared in advance for us to do." — Ephesians 2:10</p>
+</section>
+
+<footer>
+  <p>© 2026 <span>Bible Babe Wellness</span> · Coach G · All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
